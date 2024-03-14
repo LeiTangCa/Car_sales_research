@@ -1,12 +1,4 @@
 --Data Cleaning
-
---model: change empty value to 'unknow'
-BEGIN TRANSACTION;
-
-UPDATE car_prices
-SET  model = 'unknow'
-WHERE model = '' 
-
 --body: standardize 
 --cab
 BEGIN TRANSACTION;
@@ -57,24 +49,6 @@ UPDATE car_prices
 SET body = 'Wagon'
 WHERE body LIKE '%Wagon%'
 
-
---transmission: change empty value to 'unknow'
-BEGIN TRANSACTION;
-
-UPDATE car_prices
-SET transmission = 'unknow'
-WHERE transmission = '' 
-
---color: change '—' and empty value to 'unknow'
-BEGIN TRANSACTION;
-
-UPDATE car_prices
-SET color = 'unknow'
-WHERE color = '—' or color = ''
-
-
---interior: change empty value to 'unknow'
-BEGIN TRANSACTION;
 
 UPDATE car_prices
 SET interior = 'unknow'
